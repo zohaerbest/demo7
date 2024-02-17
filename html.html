@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestilling av kinobilletter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #3498db;
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .ticket-list {
+      margin-top: 20px;
+    }
+    .ticket-list-item {
+      margin-bottom: 5px;
+    }
+    #deleteTickets {
+      background-color: #e74c3c;
+    }
+    #deleteTickets:hover {
+      background-color: #c0392b;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Bestilling av kinobilletter</h1>
+
+  <div class="form-group">
+    <label for="movie">Velg film:</label>
+    <select id="movie">
+      <option value="film1">Film 1</option>
+      <option value="film2">Film 2</option>
+      <option value="film3">Film 3</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Antall billetter:</label>
+    <input type="number" id="quantity" min="1">
+    <span class="error" id="quantityError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">Fornavn:</label>
+    <input type="text" id="firstName">
+    <span class="error" id="firstNameError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Etternavn:</label>
+    <input type="text" id="lastName">
+    <span class="error" id="lastNameError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Telefonnummer:</label>
+    <input type="tel" id="phone">
+    <span class="error" id="phoneError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-post:</label>
+    <input type="email" id="email">
+    <span class="error" id="emailError"></span>
+  </div>
+
+  <button id="buyTicket">Kjøp billett</button>
+
+  <div class="ticket-list">
+    <h2>Alle billetter</h2>
+    <ul id="ticketList"></ul>
+  </div>
+
+  <button id="deleteTickets">Slett alle billetter</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
